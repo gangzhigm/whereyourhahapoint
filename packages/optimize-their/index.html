@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script type="text/javascript" src="https://unpkg.com/@antv/g2plot@latest/dist/g2plot.min.js"></script> -->
+  <script type="text/javascript" src="./g2plot.min.js"></script>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script>
+    const {
+      Pie,
+      Line,
+      Area,
+      Column,
+      Funnel,
+      WordCloud
+    } = G2Plot;
+
+    // fetch(`${window.location.href.substring(0,window.location.href.lastIndexOf('/'))}/data/world-population.json`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         const wordCloud = new WordCloud('container', {
+    //             data,
+    //             wordField: 'x',
+    //             weightField: 'value',
+    //             color: '#122c6a',
+    //             wordStyle: {
+    //                 fontFamily: 'Verdana',
+    //                 fontSize: [24, 80],
+    //             },
+    //             // 设置交互类型
+    //             interactions: [{ type: 'element-active' }],
+    //             state: {
+    //                 active: {
+    //                     // 这里可以设置 active 时的样式
+    //                     style: {
+    //                         lineWidth: 3,
+    //                     },
+    //                 },
+    //             }
+    //         });
+    //         wordCloud.render();
+    //     });
+
+    // fetch(`${window.location.href.substring(0,window.location.href.lastIndexOf('/'))}/data/funnel.json`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         const funnelPlot = new Funnel('container', {
+    //             data: data,
+    //             xField: 'stage',
+    //             yField: 'number',
+    //             legend: false,
+    //         });
+    //         funnelPlot.render();
+    //     });
+
+
+
+
+    // fetch(`${window.location.href.substring(0,window.location.href.lastIndexOf('/'))}/data/funnel.json`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         const funnelPlot = new Funnel('container', {
+    //             data: data,
+    //             xField: 'stage',
+    //             yField: 'number',
+    //             legend: false,
+    //         });
+    //         funnelPlot.render();
+    //     });
+
+
+
+
+
+
+
+    // fetch(`${window.location.href.substring(0,window.location.href.lastIndexOf('/'))}/data/funnel.json`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         const columnPlot = new Column('container', {
+    //             data,
+    //             xField: 'type',
+    //             yField: 'sales',
+    //             label: {
+    //                 // 可手动配置 label 数据标签位置
+    //                 position: 'middle', // 'top', 'bottom', 'middle',
+    //                 // 配置样式
+    //                 style: {
+    //                     fill: '#FFFFFF',
+    //                     opacity: 0.6,
+    //                 },
+    //             },
+    //             xAxis: {
+    //                 label: {
+    //                     autoHide: true,
+    //                     autoRotate: false,
+    //                 },
+    //             },
+    //             meta: {
+    //                 type: {
+    //                     alias: '类别',
+    //                 },
+    //                 sales: {
+    //                     alias: '销售额',
+    //                 },
+    //             },
+    //         });
+
+    //         columnPlot.render();
+    //     });
+
+
+
+
+
+
+
+
+    // fetch(`${window.location.href.substring(0,window.location.href.lastIndexOf('/'))}/data/area.json`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         const area = new Area('container', {
+    //             data,
+    //             xField: 'year',
+    //             yField: 'value',
+    //             seriesField: 'country',
+    //             color: ['#82d1de', '#cb302d', '#e3ca8c'],
+    //             areaStyle: {
+    //                 fillOpacity: 0.7,
+    //             },
+    //             appendPadding: 10,
+    //             isPercent: true,
+    //             yAxis: {
+    //                 label: {
+    //                     formatter: (value) => {
+    //                         return value * 100;
+    //                     },
+    //                 },
+    //             },
+    //         });
+    //         area.render();
+    //     });
+
+
+    // fetch(`${window.location.href.substring(0,window.location.href.lastIndexOf('/'))}/data/areaTwo.json`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     const area = new Area('container', {
+    //       data,
+    //       xField: 'date',
+    //       yField: 'value',
+    //       seriesField: 'country',
+    //     });
+    //     area.render();
+    //   });
+
+
+
+
+    // fetch(`${window.location.href.substring(0,window.location.href.lastIndexOf('/'))}/data/line.json`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     const line = new Line('container', {
+    //       data,
+    //       padding: 'auto',
+    //       xField: 'Date',
+    //       yField: 'scales',
+    //       xAxis: {
+    //         type: 'timeCat',
+    //         tickCount: 5,
+    //       },
+    //     });
+    //     line.render();
+    //     let cnt = 0;
+    //     let smooth = false;
+    //     const interval = setInterval(() => {
+    //       if (cnt < 5) {
+    //         smooth = !smooth;
+    //         cnt += 1;
+    //         line.update({ smooth });
+    //       } else {
+    //         clearInterval(interval);
+    //       }
+    //     }, 3000);
+    //   });
+
+
+
+
+    fetch(`${window.location.href.substring(0,window.location.href.lastIndexOf('/'))}/data/piePlot.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        const piePlot = new Pie('container', {
+          appendPadding: 10,
+          data,
+          angleField: 'value',
+          colorField: 'type',
+          radius: 1,
+          innerRadius: 0.64,
+          meta: {
+            value: {
+              formatter: (v) => `¥ ${v}`,
+            },
+          },
+          label: {
+            type: 'inner',
+            offset: '-50%',
+            autoRotate: false,
+            style: {
+              textAlign: 'center'
+            },
+            formatter: ({
+              percent
+            }) => `${(percent * 100).toFixed(0)}%`,
+          },
+          statistic: {
+            title: {
+              offsetY: -8,
+            },
+            content: {
+              offsetY: -4,
+            },
+          },
+          // 添加 中心统计文本 交互
+          interactions: [{
+              type: 'element-selected'
+            },
+            {
+              type: 'element-active'
+            },
+            {
+              type: 'pie-statistic-active',
+              cfg: {
+                start: [{
+                    trigger: 'element:mouseenter',
+                    action: 'pie-statistic:change'
+                  },
+                  {
+                    trigger: 'legend-item:mouseenter',
+                    action: 'pie-statistic:change'
+                  },
+                ],
+                end: [{
+                    trigger: 'element:mouseleave',
+                    action: 'pie-statistic:reset'
+                  },
+                  {
+                    trigger: 'legend-item:mouseleave',
+                    action: 'pie-statistic:reset'
+                  },
+                ],
+              },
+            },
+          ],
+        });
+
+        piePlot.render();
+      });
+  </script>
+</body>
+
+</html>

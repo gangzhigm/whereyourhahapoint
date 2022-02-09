@@ -1,0 +1,22 @@
+[
+    {
+        "x": "China",
+        "value": 1383220000,
+        "category": "asia"
+    }, 
+    {
+        "x": "India",
+        "value": 1316000000,
+        "category": "asia"
+    }, 
+    {
+        "x": "United States",
+        "value": 324982000,
+        "category": "america"
+    }, 
+    {
+        "x": "Indonesia",
+        "value": 263510000,
+        "category": "asia"
+    }
+]

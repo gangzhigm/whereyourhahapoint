@@ -1,0 +1,21 @@
+{
+  "name": "optimize-their",
+  "version": "1.0.0",
+  "repository": "git@gitee.com:gangzhigm/optimize-their.git",
+  "author": "gexin <864853934@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^11.1.1"
+  },
+  "main": "main.js",
+  "scripts": {
+    "serve": "electron .",
+    "serve:dev": "cross-env NODE_ENV=develop electron .",
+    "serve:prod": "cross-env NODE_ENV=production electron .",
+    "pack:win": "electron-builder --win --ia32"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.6.2"
+  }
+}
